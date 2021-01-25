@@ -4,9 +4,9 @@
 terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "emea-se-playground-2019"
+    organization = "pl-hashicorp"
     workspaces {
-      name = "Guy-AWS-Demostack"
+      name = "DemoStack-AWS"
     }
   }
 }
@@ -16,9 +16,9 @@ data "terraform_remote_state" "tls" {
   backend = "remote"
   config = {
     hostname     = "app.terraform.io"
-    organization = "emea-se-playground-2019"
+    organization = "pl-hashicorp"
     workspaces = {
-      name = "tls-root-certificate"
+      name = "tls-Workspace"
     }
   } //config
 }
@@ -28,9 +28,9 @@ data "terraform_remote_state" "dns" {
 
   config = {
     hostname     = "app.terraform.io"
-    organization = "emea-se-playground-2019"
+    organization = "pl-hashicorp"
     workspaces = {
-      name = "Guy-DNS-Zone"
+      name = "AWS-DNS-Zone"
     }
   } //network
 }
